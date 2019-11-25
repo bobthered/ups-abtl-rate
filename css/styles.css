@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+:root {
+  /* Colors */
+  --color-azure: #0078FF;
+  --color-azureLight: #cce4ff;
+  --color-azureDarken: #0062cc;
+  --color-frenchSkyBlue: #70A9FF;
+  --color-gray01: rgba( 0,0,0,.02);
+  --color-gray02: rgba( 0,0,0,.05);
+  --color-gray03: rgba( 0,0,0,.1);
+  --color-paleGreen: #88F7A2;
+  --color-paradisePink: #DA4167;
+  --color-rustyRed: #D7263D;
+
+  /* Default Style */
+  --color-error: var( --color-rustyRed );
+  --color-main: var( --color-azure );
+  --color-mainLight: var( --color-azureLight );
+  --color-mainDarken: var( --color-azureDarken );
+  --body-backgroundColor: var( --color-gray01);
+  --boxShadow: 0 .25rem .5rem var( --color-gray03 );
+  --button-background: var( --color-main );
+  --button-color: white;
+  --container-background: white;
+  --fontFamily: 'Roboto', sans-serif;
+  --fontSize: 18px;
+  --spinner-color: var( --color-main );
+}
+html, body {
+  align-items: center;
+  background-color: var( --body-backgroundColor );
+  display: flex;
+  flex-direction: row;
+  font-family: var( --fontFamily );
+  font-size: var( --fontSize );
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+button, .button {
+  background: var( --button-background );
+  border: none;
+  border-radius: 1.5rem;
+  color: var( --button-color );
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 2rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s;
+  z-index: 1;
+}
+button::before, .button:before {
+  background: inherit;
+  border-radius: inherit;
+  content: '';
+  display: flex;
+  filter: blur( .5rem );
+  height: 100%;
+  left: calc( 0% + .5rem );
+  opacity: .7;
+  pointer-events: none;
+  position: absolute;
+  bottom: -.5rem;
+  width: calc( 100% - 1rem );
+  z-index:-1;
+}
+button:hover, .button:hover {
+  background: var( --color-mainDarken );
+  cursor: pointer;
+}
+button.secondary, .button.secondary {
+  background: none;
+  box-shadow: inset 0 0 0 3px var( --button-background );
+  color: var( --button-background );
+}
+button.secondary:hover, .button.secondary:hover {
+  background: var( --color-mainLight );
+}
+button.secondary::before, .button.secondary::before {
+  opacity: 0;
+}
+button:focus. .button:focus {
+  outline: none;
+}
+.error {
+  color: var( --color-error );
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+form:last-child {
+  margin-bottom: 0;
+}
+form.getRate {
+  align-items: center;
+  flex-direction: row;
+}
+form.getRate .nonValidatedRate {
+  margin-right: 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+button, .button, input, select, textarea {
+  font-family: var( --fontFamily );
+  font-size: 1rem;
+  transition: all .3s;
+}
+input, select, textarea {
+  background-color: white;
+  border: 1px solid var( --color-gray03 );
+  border-radius: 0;
+  padding: .25rem;
+  position: relative;
+  width: 10rem;
+  -webkit-appearance: none;
+}
+input:hover, select:hover, textarea:hover {
+  border-color: var( --color-main );
+  cursor: pointer;
+}
+input:focus, select:focus, textarea:focus {
+  border: 1px solid var( --color-main );
+  outline: none;
+}
+input[type="checkbox"], checkbox {
+  appearance: none;
+  height: 1.5rem;
+  margin: 0;
+  margin-right: 1rem;
+  padding: 0;
+  position: relative;
+  width: 1.5rem;
+  z-index: 1;
+}
+input[type="checkbox"]:checked, checkbox {
+  background-color: var( --color-main );
+}
+input[type="checkbox"]:checked:after, checkbox:after {
+  align-items: center;
+  color: #fff;
+  content: '\f00c';
+  display: flex;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1rem;
+  font-weight: 900;
+  height: 1.5rem;
+  justify-content: center;
+  position: absolute;
+  width: 1.5rem;
+}
+input[type="checkbox"]:checked:before, checkbox:before {
+  background: inherit;
+  border-radius: inherit;
+  content: '';
+  display: flex;
+  filter: blur( .5rem );
+  height: 100%;
+  left: calc( 0% + .5rem );
+  opacity: .7;
+  position: absolute;
+  bottom: -.5rem;
+  width: calc( 100% - 1rem );
+  z-index:-1;
+}
+select {
+  width: 10.63rem;
+}
+selectWrapper {
+  position: relative;
+}
+selectWrapper:after {
+  align-items: center;
+  color: #000;
+  content: '\f078';
+  display: flex;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1rem;
+  font-weight: 900;
+  height: 100%;
+  justify-content: center;
+  padding: 0 .25rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+}
+inputContainer {
+  display: flex;
+  margin-bottom: .5rem;
+}
+inputContainer:last-child {
+  margin-bottom: 0;
+}
+inputContainer label {
+  width: 10rem;
+}
+outerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+}
+p {
+  margin: 0;
+}
+errorContainer, loadingContainer, rateContainer, shipmentContainer, validAddressContainer {
+  background: var( --container-background );
+  box-shadow: var( --boxShadow );
+  flex-direction: column;
+  padding: 1rem;
+  /* width: 50vw; */
+}
+errorContainer error {
+  color: var( --color-error );
+  margin-bottom: 1rem;
+}
+loadingContainer {
+  align-items: center;
+  width: auto;
+}
+loadingContainer status {
+  margin-top: 1rem;
+}
+rateContainer .alert {
+  background: var( --color-error );
+  color: #fff;
+  display: none;
+  justify-content: center;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  position: relative;
+  z-index: 1;
+}
+rateContainer .alert.show {
+  display: flex;
+}
+rateContainer residential {
+  align-items: center;
+  display: none;
+  margin-bottom: .5rem;
+}
+rateContainer residential.show {
+  display: flex;
+}
+rateContainer shipToAddress {
+  margin-bottom: 1rem;
+}
+rates {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+rates rate {
+  align-items: center;
+  box-shadow: 0 1px 0 var( --color-gray03 );
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  justify-content: space-between;
+}
+rates rate:last-child {
+  box-shadow: none;
+}
+rates rate service {
+  margin-right: 2rem;
+}
+shipmentContainer {
+  flex-direction: column;
+}
+shipmentContainer .formContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+shipmentContainer .formContainer > * {
+  margin: 0 1rem;
+}
+shipmentContainer .formContainer > *:first-child {
+  margin-left: 0;
+}
+shipmentContainer .formContainer > *:last-child {
+  margin-right: 0;
+}
+shipmentContainer table tr td:nth-child(1) {
+  padding-right: 1rem;
+}
+spinner.nb, spinner.nb::after {
+  animation: .5s spin linear infinite;
+  -webkit-animation: .5s spin linear infinite;
+  background: transparent;
+  border-top: 4px solid var( --color-main );
+  border-right: 4px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  height: 4rem;
+  margin: 0;
+  position: relative;
+  width: 4rem;
+}
+spinner.nb::after {
+  animation: none;
+  -webkit-animation: none;
+  border-top: 4px solid var( --color-main );
+  content: '';
+  filter: blur( .25rem );
+  opacity: .7;
+  position: absolute;
+}
+table tr td:nth-child(2) {
+  text-align: left;
+}
+validAddressContainer .error {
+  margin-bottom: 2rem;
+}
+.validAddresses {
+  display: flex;
+  flex-direction: column;
+}
+.validAddresses validAddress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.validAddresses validAddress:last-child {
+  margin-bottom: 0;
+}
+.validAddresses validAddress address {
+  font-style: normal;
+  margin-right: 2rem;
+}
+.validAddresses validAddress button {
+  flex-grow: 1;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

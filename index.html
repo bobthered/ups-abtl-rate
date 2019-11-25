@@ -1,0 +1,232 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>UPS Freight Estimate - ABTL.com</title>
+  <meta name="author" content="SitePoint">
+  <meta name="description" content="UPS Freight Estimate - ABTL.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <outerContainer>
+    <shipmentContainer class="toggleableContainer">
+      <div class="formContainer">
+        <form class="ShipFrom">
+          <h1>Ship From:</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td>Address</td>
+                <td><input type="text" class="AddressLine" value="3177 Lehigh Street" /></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><input type="text" class="City" value="Caledonia" /></td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>
+                  <selectWrapper>
+                    <select class="StateProvinceCode">
+                      <option value="">--</option>
+                      <option value="AL">AL</option>
+                      <option value="AK">AK</option>
+                      <option value="AZ">AZ</option>
+                      <option value="AR">AR</option>
+                      <option value="CA">CA</option>
+                      <option value="CO">CO</option>
+                      <option value="CT">CT</option>
+                      <option value="DE">DE</option>
+                      <option value="FL">FL</option>
+                      <option value="GA">GA</option>
+                      <option value="HI">HI</option>
+                      <option value="ID">ID</option>
+                      <option value="IL">IL</option>
+                      <option value="IN">IN</option>
+                      <option value="IA">IA</option>
+                      <option value="KS">KS</option>
+                      <option value="KY">KY</option>
+                      <option value="LA">LA</option>
+                      <option value="ME">ME</option>
+                      <option value="MD">MD</option>
+                      <option value="MA">MA</option>
+                      <option value="MI">MI</option>
+                      <option value="MN">MN</option>
+                      <option value="MS">MS</option>
+                      <option value="MO">MO</option>
+                      <option value="MT">MT</option>
+                      <option value="NE">NE</option>
+                      <option value="NV">NV</option>
+                      <option value="NH">NH</option>
+                      <option value="NJ">NJ</option>
+                      <option value="NM">NM</option>
+                      <option value="NY" selected>NY</option>
+                      <option value="NC">NC</option>
+                      <option value="ND">ND</option>
+                      <option value="OH">OH</option>
+                      <option value="OK">OK</option>
+                      <option value="OR">OR</option>
+                      <option value="PA">PA</option>
+                      <option value="RI">RI</option>
+                      <option value="SC">SC</option>
+                      <option value="SD">SD</option>
+                      <option value="TN">TN</option>
+                      <option value="TX">TX</option>
+                      <option value="UT">UT</option>
+                      <option value="VT">VT</option>
+                      <option value="VA">VA</option>
+                      <option value="WA">WA</option>
+                      <option value="WV">WV</option>
+                      <option value="WI">WI</option>
+                      <option value="WY">WY</option>
+                    </select>
+                  </selectWrapper>
+                </td>
+              </tr>
+              <tr>
+                <td>ZIP</td>
+                <td><input type="text" class="PostalCode" value="14423" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <input type="hidden" class="CountryCode" value="US" />
+        </form>
+        <form class="ShipTo">
+          <h1>Ship To:</h1>
+          <p class="error"></p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Residential</td>
+                <td><input type="checkbox" class="Residential" /></td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td><input type="text" class="AddressLine" value="" /></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><input type="text" class="City" value="" /></td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>
+                  <selectWrapper>
+                    <select class="StateProvinceCode">
+                      <option value="">--</option>
+                      <option value="AL">AL</option>
+                      <option value="AK">AK</option>
+                      <option value="AZ">AZ</option>
+                      <option value="AR">AR</option>
+                      <option value="CA">CA</option>
+                      <option value="CO">CO</option>
+                      <option value="CT">CT</option>
+                      <option value="DE">DE</option>
+                      <option value="FL">FL</option>
+                      <option value="GA">GA</option>
+                      <option value="HI">HI</option>
+                      <option value="ID">ID</option>
+                      <option value="IL">IL</option>
+                      <option value="IN">IN</option>
+                      <option value="IA">IA</option>
+                      <option value="KS">KS</option>
+                      <option value="KY">KY</option>
+                      <option value="LA">LA</option>
+                      <option value="ME">ME</option>
+                      <option value="MD">MD</option>
+                      <option value="MA">MA</option>
+                      <option value="MI">MI</option>
+                      <option value="MN">MN</option>
+                      <option value="MS">MS</option>
+                      <option value="MO">MO</option>
+                      <option value="MT">MT</option>
+                      <option value="NE">NE</option>
+                      <option value="NV">NV</option>
+                      <option value="NH">NH</option>
+                      <option value="NJ">NJ</option>
+                      <option value="NM">NM</option>
+                      <option value="NY">NY</option>
+                      <option value="NC">NC</option>
+                      <option value="ND">ND</option>
+                      <option value="OH">OH</option>
+                      <option value="OK">OK</option>
+                      <option value="OR">OR</option>
+                      <option value="PA">PA</option>
+                      <option value="RI">RI</option>
+                      <option value="SC">SC</option>
+                      <option value="SD">SD</option>
+                      <option value="TN">TN</option>
+                      <option value="TX">TX</option>
+                      <option value="UT">UT</option>
+                      <option value="VT">VT</option>
+                      <option value="VA">VA</option>
+                      <option value="WA">WA</option>
+                      <option value="WV">WV</option>
+                      <option value="WI">WI</option>
+                      <option value="WY">WY</option>
+                    </select>
+                  </selectWrapper>
+                </td>
+              </tr>
+              <tr>
+                <td>ZIP</td>
+                <td><input type="text" class="PostalCode" value="" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <input type="hidden" class="CountryCode" value="US" />
+        </form>
+        <form class="Package">
+          <h1>Package Info</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td>Number of Packages</td>
+                <td><input type="text" class="NumOfPackages" value="" /></td>
+              </tr>
+              <tr>
+                <td>Weight per package ( lbs. )</td>
+                <td><input type="text" class="Weight" value="" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div>
+        <form class="getRate">
+          <a class="button secondary nonValidatedRate" href="#">Non-validated Rate</a>
+          <button>Validated Rate</button>
+        </form>
+      </div>
+    </shipmentContainer>
+    <rateContainer class="toggleableContainer" style="display: none;">
+      <h1>Rate</h1>
+      <p class="alert"><b>Ship To Address Changed To:</b></p>
+      <residential><checkbox></checkbox>Residential</residential>
+      <shipToAddress></shipToAddress>
+      <rates></rates>
+      <button>New Quote</button>
+    </rateContainer>
+    <validAddressContainer class="toggleableContainer" style="display: none;">
+      <p class="error">Unfortunately, the address provided could not be validated.  Please choose an address below.</p>
+      <div class="validAddresses"></div>
+    </validAddressContainer>
+    <loadingContainer class="toggleableContainer" style="display: none;">
+      <spinner class="nb"></spinner>
+      <status></status>
+    </loadingContainer>
+    <errorContainer class="toggleableContainer" style="display: none;">
+      <error>There was an error with the submitted data.</error>
+      <button>Try Again</button>
+    </errorContainer>
+  </outerContainer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
