@@ -34,7 +34,6 @@ const _ups = {
            }
         },
         "ShipTo":{
-           "Name":"Extruders",
            "Address":{
               "AddressLine":[
                  "Address Line ",
@@ -87,12 +86,19 @@ const _ups = {
 
 const nonValidatedRateClickHandler = async e => {
   e.preventDefault();
+  updateUPS();
   const response = await fetch( _corsAnywhereURL + 'https://wwwcie.ups.com/rest/Rate', {
     method : 'POST',
     body: JSON.stringify( _ups )
   } );
   const result = await response.json();
-  console.log( response, result );
+  console.log( result );
+}
+const updateUPS = () => {
+  const formShipToNode = document.querySelector( 'form.ShipTo' );
+  _ups.RateRequest.Shipment.ShipTo.City = formShipToNode.querySelector( 'City' ).value;
+  _ups.RateRequest.Shipment.ShipTo.State = formShipToNode.querySelector( 'State' ).value;
+  _ups.RateRequest.Shipment.ShipTo.ZIP = formShipToNode.querySelector( 'ZIP' ).value;
 }
 
 document.querySelector( '.nonValidatedRate' ).addEventListener( 'click', nonValidatedRateClickHandler );
