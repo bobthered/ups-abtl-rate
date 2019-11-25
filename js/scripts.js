@@ -91,8 +91,8 @@ const nonValidatedRateClickHandler = async e => {
     method : 'POST',
     body: JSON.stringify( _ups )
   } );
-  // const result = await response.json();
-  console.log( response );
+  const result = await response.json();
+  console.log( response, result );
 }
 
 document.querySelector( '.nonValidatedRate' ).addEventListener( 'click', nonValidatedRateClickHandler );
