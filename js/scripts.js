@@ -87,7 +87,7 @@ const getRates = async () => {
     body: JSON.stringify( _ups )
   } );
   const result = await response.json();
-  console.log( result );
+  console.log( response, result );
 }
 const setCurrentTab = tabId => {
   document.querySelectorAll( 'tab' ).forEach( tabNode => {
