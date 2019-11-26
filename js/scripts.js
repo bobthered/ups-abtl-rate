@@ -82,7 +82,7 @@ const getRatesClickHandler = async e => {
   getRates();
 }
 const getRates = async () => {
-  const response = await fetch( _corsAnywhereURL + 'https://onlinetools.ups.com/rest/Rate', {
+  const response = await fetch( _corsAnywhereURL + 'https://wwwcie.ups.com/rest/Rate', {
     method : 'POST',
     body: JSON.stringify( _ups )
   } );
