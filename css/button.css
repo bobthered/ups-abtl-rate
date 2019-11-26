@@ -1,0 +1,22 @@
+button, .button {
+    background: var(--button-background);
+    border-radius: var(--input-borderRadius);
+    color: var(--button-color);
+    display: inline-block;
+    line-height: 3rem;
+    min-height: 3rem;
+    text-align: center;
+    text-decoration: none;
+}
+button:hover, .button:hover {
+    opacity: .85;
+}
+button.back, .button.back,
+button.outline, .button.outline {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--button-background);
+    color: var(--button-background);
+}
+button.back:hover, .button.back:hover {
+    opacity: .5;
+}

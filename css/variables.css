@@ -1,0 +1,9 @@
+:root {
+    --color-primary: #008cff;
+    --box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    --button-background: var(--color-primary);
+    --button-color: #ffffff;
+    --input-borderRadius: var(--input-height);
+    --input-height: 3rem;
+    --input-padding: 0 1rem;
+}

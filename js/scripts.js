@@ -18,28 +18,24 @@ const _ups = {
         }
      },
      "Shipment":{
-        "Shipper":{
-           "Name":"Shipper Name",
-           "ShipperNumber":"Shipper Number",
-           "Address":{
-              "AddressLine":[
-                 "Address Line ",
-                 "Address Line ",
-                 "Address Line "
-              ],
-              "City":"Caledonia",
-              "StateProvinceCode":"NY",
-              "PostalCode":"14423",
-              "CountryCode":"US"
-           }
-        },
+        // "Shipper":{
+        //    "Name":"Shipper Name",
+        //    "ShipperNumber":"Shipper Number",
+        //    "Address":{
+        //       "AddressLine":[
+        //          "Address Line ",
+        //          "Address Line ",
+        //          "Address Line "
+        //       ],
+        //       "City":"Caledonia",
+        //       "StateProvinceCode":"NY",
+        //       "PostalCode":"14423",
+        //       "CountryCode":"US"
+        //    }
+        // },
         "ShipTo":{
            "Address":{
-              "AddressLine":[
-                 "Address Line ",
-                 "Address Line ",
-                 "Address Line "
-              ],
+              "AddressLine":[],
               "City":"Wylie",
               "StateProvinceCode":"TX",
               "PostalCode":"75098",
@@ -47,13 +43,8 @@ const _ups = {
            }
         },
         "ShipFrom":{
-           "Name":"ABTL",
            "Address":{
-              "AddressLine":[
-                 "Address Line ",
-                 "Address Line ",
-                 "Address Line "
-              ],
+              "AddressLine":[],
               "City":"Caledonia",
               "StateProvinceCode":"NY",
               "PostalCode":"14423",
@@ -84,9 +75,13 @@ const _ups = {
   }
 };
 
-const nonValidatedRateClickHandler = async e => {
+const getRatesClickHandler = async e => {
   e.preventDefault();
-  updateUPS();
+  updateShipFrom();
+  // updateShipTo();
+  getRates();
+}
+const getRates = async () => {
   const response = await fetch( _corsAnywhereURL + 'https://wwwcie.ups.com/rest/Rate', {
     method : 'POST',
     body: JSON.stringify( _ups )
@@ -94,11 +89,27 @@ const nonValidatedRateClickHandler = async e => {
   const result = await response.json();
   console.log( result );
 }
-const updateUPS = () => {
-  const formShipToNode = document.querySelector( 'form.ShipTo' );
-  _ups.RateRequest.Shipment.ShipTo.City = formShipToNode.querySelector( 'City' ).value;
-  _ups.RateRequest.Shipment.ShipTo.State = formShipToNode.querySelector( 'State' ).value;
-  _ups.RateRequest.Shipment.ShipTo.ZIP = formShipToNode.querySelector( 'ZIP' ).value;
+const setCurrentTab = tabId => {
+  document.querySelectorAll( 'tab' ).forEach( tabNode => {
+    tabNode.removeAttribute( 'current' );
+  } );
+  document.querySelectorAll( 'tabStatus' ).forEach( tabStatusNode => {
+    tabStatusNode.removeAttribute( 'current' );
+  } );
+  document.querySelector( `tab#${tabId}`).setAttribute( 'current', '' );
+  document.querySelector( `tabStatus[showTab="${tabId}"]`).setAttribute( 'current', '' );
+}
+const showTabClickHandler = e => {
+  e.preventDefault();
+  const tabId = e.target.getAttribute( 'showTab' );
+  setCurrentTab( tabId );
+}
+const updateShipFrom = () => {
+  const tabShipFromNode = document.querySelector( 'tab#shipFrom' );
+  _ups.RateRequest.Shipment.ShipFrom.Address.AddressLine = [tabShipFromNode.querySelector( '[name="address"]' ).value];
 }
 
-document.querySelector( '.nonValidatedRate' ).addEventListener( 'click', nonValidatedRateClickHandler );
+document.querySelector( '#getRates' ).addEventListener( 'click', getRatesClickHandler );
+document.querySelectorAll( '[showTab]' ).forEach( showTabNode => {
+  showTabNode.addEventListener( 'click', showTabClickHandler );
+} );

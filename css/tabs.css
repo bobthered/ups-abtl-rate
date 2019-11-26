@@ -1,0 +1,45 @@
+tabContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 1rem;
+}
+tab {
+    display: none;
+}
+tab[current] {
+    display: block;
+}
+tabStatusContainer{
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 2rem;
+    margin-bottom: 2rem;
+    width: 288px;
+}
+tabStatus {
+    align-items: center;
+    box-shadow: 0 2px 0 rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    opacity: .5;
+    position: relative;
+    height: 100%;
+}
+tabStatus[current] {
+    box-shadow: 0 2px 0 var(--color-primary);
+    opacity: 1;
+}
+tabStatus:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+tabHeader {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+body[mode="normal"] tab#shipTo .buttonContainer .back,
+body[mode="normal"] tabStatus[showTab="shipFrom"] {
+    display:none;
+}
+body[mode="advanced"] tab#shipFrom .buttonContainer,
+body[mode="normal"] tab#shipTo .buttonContainer {
+    grid-template-columns: 1fr;
+}
+body[mode="normal"] tabStatusContainer,
+body[mode="advanced"] tab#shipTo .buttonContainer {
+    grid-template-columns: 1fr 1fr;
+}
