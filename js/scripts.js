@@ -78,7 +78,7 @@ const getRatesClickHandler = async e => {
   updateUPSdata('tab#shipFrom', 'Shipper' );
   updateUPSdata('tab#shipFrom', 'ShipFrom' );
   updateUPSdata('tab#shipTo', 'ShipTo' );
-  // updateShipTo();
+  console.log( _ups );
   getRates();
 }
 const getRates = async () => {
