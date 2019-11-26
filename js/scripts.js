@@ -18,21 +18,21 @@ const _ups = {
         }
      },
      "Shipment":{
-        // "Shipper":{
-        //    "Name":"Shipper Name",
-        //    "ShipperNumber":"Shipper Number",
-        //    "Address":{
-        //       "AddressLine":[
-        //          "Address Line ",
-        //          "Address Line ",
-        //          "Address Line "
-        //       ],
-        //       "City":"Caledonia",
-        //       "StateProvinceCode":"NY",
-        //       "PostalCode":"14423",
-        //       "CountryCode":"US"
-        //    }
-        // },
+        "Shipper":{
+           "Name":"Shipper Name",
+           "ShipperNumber":"Shipper Number",
+           "Address":{
+              "AddressLine":[
+                 "Address Line ",
+                 "Address Line ",
+                 "Address Line "
+              ],
+              "City":"Caledonia",
+              "StateProvinceCode":"NY",
+              "PostalCode":"14423",
+              "CountryCode":"US"
+           }
+        },
         "ShipTo":{
            "Address":{
               "AddressLine":[],
