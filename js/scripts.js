@@ -105,11 +105,11 @@ const showTabClickHandler = e => {
   setCurrentTab( tabId );
 }
 const updateUPSdata = ( element, prop ) => {
-  const tabShipFromNode = document.querySelector( element );
-  _ups.RateRequest.Shipment[prop].Address.AddressLine = [tabShipFromNode.querySelector( '[name="address"]' ).value];
-  _ups.RateRequest.Shipment[prop].City = [tabShipFromNode.querySelector( '[name="city"]' ).value];
-  _ups.RateRequest.Shipment[prop].State = [tabShipFromNode.querySelector( '[name="state"]' ).value];
-  _ups.RateRequest.Shipment[prop].PostalCode = [tabShipFromNode.querySelector( '[name="zip"]' ).value];
+  const tabNode = document.querySelector( element );
+  _ups.RateRequest.Shipment[prop].Address.AddressLine = [tabNode.querySelector( '[name="address"]' ).value];
+  _ups.RateRequest.Shipment[prop].City = [tabNode.querySelector( '[name="city"]' ).value];
+  _ups.RateRequest.Shipment[prop].StateProvinceCode = [tabNode.querySelector( '[name="state"]' ).value];
+  _ups.RateRequest.Shipment[prop].PostalCode = [tabNode.querySelector( '[name="zip"]' ).value];
 }
 
 document.querySelector( '#getRates' ).addEventListener( 'click', getRatesClickHandler );
