@@ -12,7 +12,7 @@ const _ups = {
   },
   "RateRequest":{
      "Request":{
-        "RequestOption":"Rate",
+        "RequestOption":"Shop",
         "TransactionReference":{
            "CustomerContext":"Your Customer Context"
         }
