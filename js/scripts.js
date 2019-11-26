@@ -19,8 +19,6 @@ const _ups = {
      },
      "Shipment":{
         "Shipper":{
-           "Name":"Shipper Name",
-           "ShipperNumber":"Shipper Number",
            "Address":{
               "AddressLine":[
                  "Address Line ",
@@ -77,7 +75,9 @@ const _ups = {
 
 const getRatesClickHandler = async e => {
   e.preventDefault();
-  updateShipFrom();
+  updateUPSdata('tab#shipFrom', 'Shipper' );
+  updateUPSdata('tab#shipFrom', 'ShipFrom' );
+  updateUPSdata('tab#shipTo', 'ShipTo' );
   // updateShipTo();
   getRates();
 }
@@ -104,9 +104,12 @@ const showTabClickHandler = e => {
   const tabId = e.target.getAttribute( 'showTab' );
   setCurrentTab( tabId );
 }
-const updateShipFrom = () => {
-  const tabShipFromNode = document.querySelector( 'tab#shipFrom' );
-  _ups.RateRequest.Shipment.ShipFrom.Address.AddressLine = [tabShipFromNode.querySelector( '[name="address"]' ).value];
+const updateUPSdata = ( element, prop ) => {
+  const tabShipFromNode = document.querySelector( element );
+  _ups.RateRequest.Shipment[prop].Address.AddressLine = [tabShipFromNode.querySelector( '[name="address"]' ).value];
+  _ups.RateRequest.Shipment[prop].City = [tabShipFromNode.querySelector( '[name="city"]' ).value];
+  _ups.RateRequest.Shipment[prop].State = [tabShipFromNode.querySelector( '[name="state"]' ).value];
+  _ups.RateRequest.Shipment[prop].PostalCode = [tabShipFromNode.querySelector( '[name="zip"]' ).value];
 }
 
 document.querySelector( '#getRates' ).addEventListener( 'click', getRatesClickHandler );
